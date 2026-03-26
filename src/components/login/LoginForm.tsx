@@ -9,12 +9,15 @@ interface LoginFormProps {
 const LoginForm = ({ onLoginSuccess }: LoginFormProps) => {
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (values: { username: string; password: string }) => {
+  const handleSubmit = async (values: {
+    username: string;
+    password: string;
+  }) => {
     setLoading(true);
     try {
       // 模拟登录请求延迟
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // 调用父组件的登录处理
       onLoginSuccess(values.username, values.password);
     } catch {
@@ -31,7 +34,7 @@ const LoginForm = ({ onLoginSuccess }: LoginFormProps) => {
           管理后台登录
         </div>
       }
-      style={{ 
+      style={{
         width: 400,
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         borderRadius: 8,
@@ -47,24 +50,18 @@ const LoginForm = ({ onLoginSuccess }: LoginFormProps) => {
           name="username"
           rules={[{ required: true, message: '请输入用户名' }]}
         >
-          <Input 
-            prefix={<UserOutlined />}
-            placeholder="用户名"
-          />
+          <Input prefix={<UserOutlined />} placeholder="用户名" />
         </Form.Item>
         <Form.Item
           name="password"
           rules={[{ required: true, message: '请输入密码' }]}
         >
-          <Input.Password
-            prefix={<LockOutlined />}
-            placeholder="密码"
-          />
+          <Input.Password prefix={<LockOutlined />} placeholder="密码" />
         </Form.Item>
         <Form.Item>
-          <Button 
-            type="primary" 
-            htmlType="submit" 
+          <Button
+            type="primary"
+            htmlType="submit"
             loading={loading}
             style={{ width: '100%' }}
           >

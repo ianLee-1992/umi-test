@@ -1,4 +1,13 @@
-import { Form, Input, Button, Select, Switch, Typography, Card, message } from 'antd';
+import {
+  Form,
+  Input,
+  Button,
+  Select,
+  Switch,
+  Typography,
+  Card,
+  message,
+} from 'antd';
 import { SaveOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
@@ -40,23 +49,13 @@ const SettingsPage = () => {
           >
             <Input placeholder="请输入站点名称" />
           </Form.Item>
-          <Form.Item
-            label="站点描述"
-            name="siteDescription"
-          >
+          <Form.Item label="站点描述" name="siteDescription">
             <Input.TextArea rows={4} placeholder="请输入站点描述" />
           </Form.Item>
-          <Form.Item
-            label="站点状态"
-            name="siteStatus"
-            valuePropName="checked"
-          >
+          <Form.Item label="站点状态" name="siteStatus" valuePropName="checked">
             <Switch checkedChildren="开启" unCheckedChildren="关闭" />
           </Form.Item>
-          <Form.Item
-            label="主题"
-            name="theme"
-          >
+          <Form.Item label="主题" name="theme">
             <Select
               options={[
                 { value: 'light', label: '浅色' },

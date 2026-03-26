@@ -9,13 +9,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [currentPage, setCurrentPage] = useState<string>('dashboard');
 
-  const login = async (username: string, password: string): Promise<boolean> => {
+  const login = async (
+    username: string,
+    password: string
+  ): Promise<boolean> => {
     // 模拟登录验证
     if (username === 'admin' && password === 'admin') {
       setUser({
         id: '1',
         username: 'admin',
-        role: 'admin'
+        role: 'admin',
       });
       return true;
     }
@@ -28,14 +31,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   return (
-    <AuthContext.Provider value={{ 
-      user, 
-      isAuthenticated: !!user, 
-      login, 
-      logout,
-      currentPage,
-      setCurrentPage
-    }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated: !!user,
+        login,
+        logout,
+        currentPage,
+        setCurrentPage,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

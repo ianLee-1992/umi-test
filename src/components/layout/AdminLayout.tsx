@@ -63,13 +63,14 @@ const AdminLayout = () => {
   // 生成面包屑项
   const generateBreadcrumbItems = () => {
     const pathSnippets = location.pathname.split('/').filter((i) => i);
-    const items: { title: string; onClick?: () => void; className?: string }[] = [
-      {
-        title: '首页',
-        onClick: () => navigate('/admin/dashboard'),
-        className: 'breadcrumb-link',
-      },
-    ];
+    const items: { title: string; onClick?: () => void; className?: string }[] =
+      [
+        {
+          title: '首页',
+          onClick: () => navigate('/admin/dashboard'),
+          className: 'breadcrumb-link',
+        },
+      ];
 
     let currentPath = '';
     pathSnippets.forEach((snippet) => {

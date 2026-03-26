@@ -32,8 +32,12 @@ const UsersPage = () => {
       width: 200,
       render: () => (
         <Space size="middle">
-          <Button type="primary" size="small">编辑</Button>
-          <Button danger size="small">删除</Button>
+          <Button type="primary" size="small">
+            编辑
+          </Button>
+          <Button danger size="small">
+            删除
+          </Button>
         </Space>
       ),
     },
@@ -86,7 +90,11 @@ const UsersPage = () => {
             添加用户
           </Button>
         </div>
-        <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} />
+        <Table
+          columns={columns}
+          dataSource={data}
+          pagination={{ pageSize: 10 }}
+        />
       </Card>
     </div>
   );
